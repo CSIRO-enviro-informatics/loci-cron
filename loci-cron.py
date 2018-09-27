@@ -45,7 +45,7 @@ def send_email_via_mailjet(message, subject, to_addresses, secrets):
             {
                 'From': {
                     'Email': 'nicholas.car@csiro.au',
-                    'Name': 'LCO-I cron bot'
+                    'Name': 'LOC-I bot'
                 },
                 'To': recipients,
                 'Subject': subject,
@@ -83,10 +83,10 @@ if __name__ == '__main__':
     if len(MESSAGES) > 0:
         print('Failures')
         message = make_error_message(MESSAGES)
-        send_email_via_mailjet(message, 'Failures', pwds.emails, pwds.secrets)
+        send_email_via_mailjet(message, '[cron] Failures', pwds.emails, pwds.secrets)
     else:
         print('No failures')
         # no errors so send an 'OK' message to main maintainer only
-        send_email_via_mailjet('No errors for this report', 'No failures', pwds.emails, pwds.secrets)
+        send_email_via_mailjet('No errors for this report', '[cron] No failures', pwds.emails, pwds.secrets)
 
     print('done')
