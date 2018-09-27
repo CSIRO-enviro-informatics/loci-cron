@@ -84,10 +84,10 @@ if __name__ == '__main__':
         print('Failures')
         print('\n'.join(MESSAGES))
         message = make_error_message(MESSAGES)
-        #send_email_via_mailjet(message, '[cron] Failures', pwds.emails, pwds.secrets)
+        send_email_via_mailjet(message, '[cron] Failures', pwds.emails, pwds.secrets)
     else:
         print('No failures')
         # no errors so send an 'OK' message to main maintainer only
-        #send_email_via_mailjet('No errors for this report', '[cron] No failures', pwds.emails, pwds.secrets)
+        send_email_via_mailjet('No errors for this report', '[cron] No failures', pwds.emails, pwds.secrets)
 
     print('done')
