@@ -7,8 +7,8 @@ ASSETS = [
                 'regex': 'rdfs:label \"GNAF Linked Data dataset top-level Register\"'
             },
             {
-                'address': 'http://gnafld.net/sparql?query=SELECT%20(COUNT(%3Fs)%20AS%20%3Fc)%20WHERE%20%7B%3Fs%20a%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgnaf%23Address%3E%20.%7D',
-                'regex': '200743'
+                'address': 'SELECT%20(COUNT(%3Fs)%20AS%20%3Fc)%20WHERE%20%7B%3Fs%20a%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgnaf%23Locality%3E%20.%7D',
+                'regex': '150'
             }
         ]
     }
