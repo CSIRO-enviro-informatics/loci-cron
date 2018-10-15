@@ -5,6 +5,7 @@ import datetime
 import json
 import passwords as pwds
 import assets
+import sys
 
 
 MESSAGES = []
@@ -79,15 +80,23 @@ if __name__ == '__main__':
                 # the validation has failed so add to failures list
                 add_validation_failure_to_list(asset['label'], uri['address'], uri['regex'])
 
+    # only email if flag set: -e or --email
+
     # check for any failures and send to people
     if len(MESSAGES) > 0:
         print('Failures')
         print('\n'.join(MESSAGES))
-        message = make_error_message(MESSAGES)
-        send_email_via_mailjet(message, '[cron] Failures', pwds.emails, pwds.secrets)
+        if len(sys.argv) > 1:
+            if sys.argv[1] == '-e' or sys.argv[1] == '--email':
+                print('Sending failures email')
+                message = make_error_message(MESSAGES)
+                send_email_via_mailjet(message, '[cron] Failures', pwds.emails, pwds.secrets)
     else:
         print('No failures')
         # no errors so send an 'OK' message to main maintainer only
-        send_email_via_mailjet('No errors for this report', '[cron] No failures', pwds.emails, pwds.secrets)
+        if len(sys.argv) > 1:
+            if sys.argv[1] == '-e' or sys.argv[1] == '--email':
+                print('Sending no failures email')
+                send_email_via_mailjet('No errors for this report', '[cron] No failures', pwds.emails, pwds.secrets)
 
     print('done')
