@@ -11,5 +11,34 @@ ASSETS = [
                 'regex': '15926'
             }
         ]
+    },
+    {
+        'label': 'GA Samples, Surveys, Sites',
+        'uris': [
+            {
+                'address': 'http://pid.geoscience.gov.au/sample/?_format=text/turtle',
+                'regex': 'rdfs\:label \"Sample igsn\:AU1000082\"\^\^xsd:string ;'
+            },
+            {
+                'address': 'http://pid.geoscience.gov.au/sample/AU239?_format=text/turtle',
+                'regex': 'rdfs\:label \"Sample igsn:AU239\"\^\^xsd\:string ;'
+            },
+            # {
+            #     'address': 'http://pid.geoscience.gov.au/survey/?_format=text/turtle',
+            #     'regex': ''
+            # },
+            # {
+            #     'address': 'http://pid.geoscience.gov.au/survey/801?_format=text/turtle',
+            #     'regex': ''
+            # },
+            {
+                'address': 'http://pid.geoscience.gov.au/site/ga/?_format=text/turtle',
+                'regex': 'rdfs\:label \"Site 94\"\^\^xsd:string ;'
+            },
+            {
+                'address': 'http://pid.geoscience.gov.au/site/ga/94?_format=text/turtle',
+                'regex': 'rdfs\:label \"Site 94\"\^\^xsd\:string ;'
+            }
+        ]
     }
 ]
