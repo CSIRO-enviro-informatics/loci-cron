@@ -1,4 +1,4 @@
-# loci-cron.py
+# cron.py
 import requests
 import re
 import datetime
