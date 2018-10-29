@@ -17,7 +17,7 @@ ASSETS = [
         'uris': [
             {
                 'address': 'http://geofabricld.net/',
-                'regex': '<h1>GeoFabric LDAPI</h1>'
+                'regex': '<h1>Geofabric - distributed as Linked Data</h1>'
             }
         ]
     }
